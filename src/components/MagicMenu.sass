@@ -1,0 +1,81 @@
+.magic-menu
+    position: relative
+    height: 75px
+    width: 350px
+    background: white
+    border-radius: 22px
+    color: #333333
+    padding: 2em
+
+.menu-selector
+    position: absolute
+    top: -50%
+    background: rgba(50, 192, 69, 1)
+    height: 70px
+    width: 70px
+    border-radius: 50%
+    border: 6px solid #333333
+    transition: .5s
+
+    &::before
+        content: ""
+        position: absolute
+        bottom: 7px
+        left: -21px
+        height: 20px
+        width: 20px
+        background: transparent
+        // background: red
+        border-radius: 0 22px 0 0
+        box-shadow: 0px -10px 0 0 #333333
+    &::after
+        content: ""
+        position: absolute
+        bottom: 7px
+        right: -21px
+        height: 20px
+        width: 20px
+        background: rgba(182, 30, 166, 0)
+        // background: blue
+        border-radius: 22px 0 0 0
+        box-shadow: 0px -6px 0 0 #333333
+.home
+    transform: translateX(70px)
+.chat
+    transform: translateX(calc(70px*2))
+.settings
+    transform: translateX(calc(70px*3))
+
+ul
+    height: 100%
+    width: 100%
+    display: flex
+
+    align-items: center
+
+    li
+        width: 70px
+        z-index: 1
+
+        a
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+
+            .menu-icon
+                transition: .5s
+                line-height: 30px
+            .menu-text
+                position: absolute
+                letter-spacing: 0.05em
+                transition: .5s
+                opacity: 0
+                transform: translateY(20px)
+
+        .active
+            .menu-icon
+                transform: translateY(-34px)
+            .menu-text
+                opacity: 1
+                transform: translateY(10px)
