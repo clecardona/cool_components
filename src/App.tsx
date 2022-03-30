@@ -5,8 +5,10 @@ import "./styles/base.sass";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h2>Some cool components...</h2>{" "}
+      <header>
+        <h2>
+          Some <b>cool </b> components
+        </h2>
       </header>
       <main>
         <MagicMenu />
