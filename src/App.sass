@@ -1,16 +1,48 @@
 .App
     background: #333333
     color: white
-    height: 100vh
+    min-height: 100vh
 header
     height: 100px
     display: flex
-    justify-content: center
+    padding: 3em
     align-items: center
     border-bottom: 1px solid #555555
+    h1
+        text-transform: uppercase
+        font-weight: 300
 
 main
     padding: 5em 3em
-    display: flex
-    justify-content: center
+    width: 100%
+    display: grid
+    grid-auto-flow: row
+    row-gap: 1em
     align-items: center
+
+    .content
+        background: #222222
+        position: relative
+        height: 500px
+        width: 100%
+        display: grid
+        grid-template-rows: 350px 1fr
+        justify-items: center
+        overflow: hidden
+        border-radius: 16px
+        .img-container
+            padding: 2em 0 1em
+            overflow: hidden
+            height: 100%
+            width: 350px
+            align-self: center
+            overflow: hidden
+            img
+                height: 100%
+                width: 100%
+                border-radius: 16px
+                overflow: hidden
+
+        .magic-menu
+            align-self: flex-end
+            margin: 2em 0
