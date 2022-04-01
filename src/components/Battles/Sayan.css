@@ -1,0 +1,99 @@
+html {
+  background: #161616;
+}
+body {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+#head {
+  position: relative;
+  width: 118px;
+  height: 132px;
+}
+#hairback-right {
+  position: absolute;
+  bottom: 46px;
+  left: 50%;
+  background: #ebae11;
+  height: 60px;
+  width: 30px;
+  border-radius: 0 50px 50px 0;
+  transform: rotate(73deg);
+  transform-origin: bottom left;
+}
+#hairback-left {
+  position: absolute;
+  bottom: 46px;
+  left: 50%;
+  background: #ebae11;
+  height: 60px;
+  width: 30px;
+  border-radius: 0 50px 50px 0;
+  transform: scale(-1, 1) rotate(73deg);
+  transform-origin: bottom left;
+}
+#face-left {
+  position: absolute;
+  left: 20px;
+  right: 50%;
+  bottom: 0;
+  top: 50%;
+  border-radius: 0 0 0 60px;
+  background: #ffffff;
+}
+#face-right {
+  position: absolute;
+  right: 20px;
+  left: 50%;
+  bottom: 0;
+  top: 50%;
+  border-radius: 0 0 60px 0;
+  background: #ffdeb9;
+}
+#mouth {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10px;
+  width: 20px;
+  border-radius: 0 0 60px 60px;
+  background: #161616;
+}
+#hair-front {
+  position: absolute;
+  top: 0;
+  bottom: 48px;
+  right: 0;
+  left: 50%;
+}
+#hair1-container {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+#hair1 {
+  z-index: 10;
+  position: absolute;
+  background: #ebae11;
+  height: 120%;
+  width: 97%;
+  left: -40px;
+  bottom: -13px;
+  border-radius: 0 50% 50% 0;
+}
+#hair2 {
+  position: absolute;
+  bottom: 0px;
+  background: #ebae11;
+  height: 60px;
+  width: 30px;
+  border-radius: 0 50px 50px 0;
+  transform: rotate(28deg);
+  transform-origin: bottom left;
+}
+.flip {
+  transform: scale(-1, 1) translateX(59px);
+}

@@ -1,6 +1,7 @@
 import MagicMenu from "./components/MagicMenu";
 import "./App.sass";
 import "./styles/base.sass";
+import Sayan from "components/Battles/Sayan";
 
 function App() {
   return (
@@ -15,6 +16,17 @@ function App() {
           Magic <b>Menu</b>
         </h2>
         <MagicMenu />
+        <h2>
+          CSS <b>Battles</b>
+        </h2>
+        <div className="content-battle">
+          <div className="battle-grid">
+            <Sayan />
+            <Sayan />
+            <Sayan />
+            <Sayan />
+          </div>
+        </div>
       </main>
     </div>
   );

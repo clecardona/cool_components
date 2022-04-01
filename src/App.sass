@@ -14,7 +14,7 @@ header
 
 main
     padding: 5em 3em
-    width: 100%
+    min-width: 100vw
     display: grid
     grid-auto-flow: row
     row-gap: 1em
@@ -23,7 +23,7 @@ main
     .content
         background: #222222
         position: relative
-        height: 500px
+        min-height: 400px
         width: 100%
         display: grid
         grid-template-rows: 350px 1fr
@@ -46,3 +46,23 @@ main
         .magic-menu
             align-self: flex-end
             margin: 2em 0
+
+    .content-battle
+        background: #222222
+        position: relative
+        min-height: 400px
+        width: 100%
+        padding: 3em
+
+        display: grid
+        align-items: center
+
+        border-radius: 16px
+        .battle-grid
+            display: flex
+            flex-wrap: wrap
+            height: 100%
+            width: 100%
+            align-items: center
+            .container
+                margin: 1em
