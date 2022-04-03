@@ -4,7 +4,7 @@ type Props = {};
 
 const Sayan = (props: Props) => {
   return (
-    <div className="container">
+    <div className="container" style={{ background: "#161616" }}>
       <div id="head">
         <span id="hairback-right"></span> <span id="hairback-left"></span>{" "}
         <span id="face-left"></span> <span id="face-right"></span>{" "}

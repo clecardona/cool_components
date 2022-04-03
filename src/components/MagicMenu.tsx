@@ -32,6 +32,9 @@ const MagicMenu = () => {
 
   return (
     <div className="content">
+      <h2 className="float">
+        Magic <b>Menu</b>
+      </h2>
       <div className="img-container">
         <img src={getImage(active)} alt="" />
       </div>
