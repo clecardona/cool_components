@@ -1,0 +1,47 @@
+.carousel
+    position: relative
+    overflow: hidden
+    height: 240px
+    background: #333
+    border-radius: 12px
+
+    #box
+        position: absolute
+
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: 200px
+        transition: .5s ease
+        height: 100%
+        justify-items: center
+        align-items: center
+
+    .container
+        height: 180px
+        width: 180px
+        display: grid
+        justify-content: center
+        align-items: center
+        border-radius: 12px
+
+    #br,#bl
+        cursor: pointer
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        z-index: 100
+        background: none
+        box-shadow: none
+        border: none
+        p
+            color: #fff
+            font-size: 40px
+            text-shadow: 2px 2px 4px #000
+            transition: .3s
+            &:hover
+                transform: scale(1.5)
+
+    #bl
+        left: 0
+    #br
+        right: 0
