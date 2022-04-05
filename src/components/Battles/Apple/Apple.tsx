@@ -1,4 +1,4 @@
-import "./Apple.css";
+import "./Apple.sass";
 
 const Apple = () => {
   return (

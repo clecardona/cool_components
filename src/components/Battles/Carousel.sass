@@ -20,9 +20,11 @@
         height: 180px
         width: 180px
         display: grid
-        justify-content: center
-        align-items: center
         border-radius: 12px
+        justify-content: center
+        justify-items: center
+        align-content: center
+        align-items: center
 
     #br,#bl
         cursor: pointer
@@ -31,6 +33,7 @@
         transform: translateY(-50%)
         z-index: 100
         background: none
+        height: 100%
         box-shadow: none
         border: none
         p
@@ -38,6 +41,7 @@
             font-size: 40px
             text-shadow: 2px 2px 4px #000
             transition: .3s
+            width: 30px
             &:hover
                 transform: scale(1.5)
 

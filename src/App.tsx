@@ -7,6 +7,7 @@ import Apple from "components/Battles/Apple/Apple";
 import Pirate from "components/Battles/Pirate/Pirate";
 import IceCream from "components/Battles/IceCream/IceCream";
 import { useEffect, useState } from "react";
+import Sceptre from "components/Battles/Sceptre/Sceptre";
 
 function App() {
   const [scrollY, setscrollY] = useState(0);
@@ -77,7 +78,7 @@ function App() {
               <Apple />
               <Pirate />
               <IceCream />
-              <Apple />
+              <Sceptre />
               <IceCream />
               <Sayan />
               <Pirate />
