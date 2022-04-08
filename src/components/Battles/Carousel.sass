@@ -26,6 +26,25 @@
         align-content: center
         align-items: center
 
+    .standard,.adjacent
+        filter: brightness(.5)
+        transform: scaleX(.95)
+
+    .current,.adjacent
+        transition: .2s ease-in-out
+
+    .current
+        z-index: 3
+        transform: scaleX(1.2) scaleY(1.2)
+        cursor: pointer
+        .container
+            box-shadow: 3px 3px 12px 0 #0000005b
+
+    .adjacent
+        z-index: 2
+        transform: scaleY(1.1)
+        transition-delay: .1s
+
     #br,#bl
         cursor: pointer
         position: absolute
