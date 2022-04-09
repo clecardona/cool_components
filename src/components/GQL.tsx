@@ -8,6 +8,15 @@ const GQL = () => {
   const [id, setId] = useState(false);
   const [author, setAuthor] = useState(true);
   const API_URL = "https://clecardona-ql.herokuapp.com/graphql";
+  const queryQL = `
+  query Books {
+    books {
+        ${id ? "id" : ""}
+        title
+        ${author ? "author" : ""}
+      }
+    }
+  `;
 
   async function fetchData() {
     const response = await axios({
@@ -17,15 +26,7 @@ const GQL = () => {
         "Content-Type": "application/json",
       },
       data: {
-        query: `
-          query Books {
-            books {
-                ${id ? "id" : ""}
-                title
-                ${author ? "author" : ""}
-              }
-            }
-          `,
+        query: queryQL,
       },
     });
     setData(response.data.data);
@@ -36,8 +37,12 @@ const GQL = () => {
     fetchData();
   }, [id, author]);
 
+  console.log("queryQL", queryQL);
+
   return (
     <>
+      <span className="query">{queryQL}</span>
+
       <div className="selectors">
         <label>
           <input type="checkbox" checked={id} onChange={() => setId(!id)} />
