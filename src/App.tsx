@@ -8,6 +8,7 @@ import Pirate from "components/Battles/Pirate/Pirate";
 import IceCream from "components/Battles/IceCream/IceCream";
 import Sceptre from "components/Battles/Sceptre/Sceptre";
 import Carousel from "components/Carousel";
+import GQL from "components/GQL";
 
 function App() {
   const battles = [
@@ -35,6 +36,12 @@ function App() {
             CSS <b>Battles</b>
           </h2>
           <Carousel Battles={battles} width={BOX_WIDTH} />
+        </div>
+        <div className="content-gql">
+          <h2 className="float">
+            Graph<b>QL</b>
+          </h2>
+          <GQL />
         </div>
       </main>
     </div>

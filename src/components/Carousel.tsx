@@ -45,6 +45,7 @@ const Carousel = ({ Battles, width }: Props) => {
   const ListOfBattles = Battles.map((Comp, index) => {
     return (
       <a
+        key={index}
         onMouseOver={() => setcurrent(index)}
         onMouseOut={() => setcurrent(-99)}
         href="https://cssbattle.dev/"
