@@ -1,6 +1,7 @@
 import MagicMenu from "./components/MagicMenu";
 import "./App.sass";
 import "components/Battles/Carousel.sass";
+import "components/Battles/Carousel_expand.sass";
 import "./styles/base.sass";
 import Sayan from "components/Battles/Sayan/Sayan";
 import Apple from "components/Battles/Apple/Apple";
@@ -33,9 +34,10 @@ function App() {
         <MagicMenu />
         <div className="content-battle">
           <h2 className="float">
-            CSS <b>Battles</b>
+            <b>Galeries</b> (CSS Battles)
           </h2>
-          <Carousel Battles={battles} width={BOX_WIDTH} />
+          <Carousel Battles={battles} width={BOX_WIDTH} type={1} />
+          <Carousel Battles={battles} type={2} />
         </div>
         <div className="content-gql">
           <h2 className="float">

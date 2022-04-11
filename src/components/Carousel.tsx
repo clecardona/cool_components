@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 
 type Props = {
   Battles: JSX.Element[];
-  width: number;
+  width?: number;
+  type: number;
 };
 
-const Carousel = ({ Battles, width }: Props) => {
+const Carousel = ({ Battles, width, type }: Props) => {
   const [canScrollRight, setcanScrollRight] = useState(true);
   const [canScrollLeft, setcanScrollLeft] = useState(false);
   const [scrollY, setscrollY] = useState(0);
@@ -13,6 +14,7 @@ const Carousel = ({ Battles, width }: Props) => {
 
   function scrollRight() {
     const fullWidth = document.getElementById("box")?.offsetWidth;
+    if (!width) return;
     if (fullWidth) {
       if (scrollY + width >= fullWidth) return;
       else return setscrollY(scrollY + width);
@@ -20,12 +22,14 @@ const Carousel = ({ Battles, width }: Props) => {
   }
 
   function scrollLeft() {
+    if (!width) return;
     if (scrollY <= 0) return;
     else return setscrollY(scrollY - width);
   }
 
   useEffect(() => {
     const fullWidth = document.getElementById("box")?.offsetWidth;
+    if (!width) return;
     if (scrollY === 0) {
       setcanScrollLeft(false);
       setcanScrollRight(true);
@@ -64,7 +68,10 @@ const Carousel = ({ Battles, width }: Props) => {
   });
 
   return (
-    <div className="carousel" style={{ width: width }}>
+    <div
+      className={type === 1 ? "carousel" : type === 2 ? "carousel-expand" : ""}
+      style={{ width: width ? width : 800 }}
+    >
       {canScrollRight && (
         <button id="br" onClick={() => scrollRight()}>
           <p>{">"}</p>
@@ -75,7 +82,13 @@ const Carousel = ({ Battles, width }: Props) => {
           <p>{"<"}</p>
         </button>
       )}
-      <div id="box" style={{ left: -scrollY }}>
+      <div
+        id="box"
+        style={{
+          left: -scrollY,
+          maxWidth: 800,
+        }}
+      >
         {ListOfBattles}
       </div>
     </div>

@@ -1,0 +1,43 @@
+.carousel-expand
+    position: relative
+    overflow: hidden
+    height: 240px
+    background: #fff
+    border-radius: 12px
+
+    #box
+        position: absolute
+        display: flex
+        height: 100%
+        width: 100%
+        transition: .5s ease
+        justify-items: center
+        align-items: center
+        padding: 1em
+        a
+            overflow: hidden
+            margin: 0 3px
+        .container
+            height: 180px
+            max-width: 100%
+            background: white
+            display: grid
+            border-radius: 12px
+            justify-content: center
+            justify-items: center
+            align-content: center
+            align-items: center
+            overflow: hidden
+
+        .standard,.adjacent
+            filter: brightness(.3)
+            width: 100px
+
+        .current
+            z-index: 3
+            transition: .5s
+            cursor: pointer
+            width: 220px
+
+    #br,#bl
+        display: none

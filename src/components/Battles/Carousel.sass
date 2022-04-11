@@ -27,22 +27,22 @@
         align-items: center
 
     .standard,.adjacent
-        filter: brightness(.5)
-        transform: scaleX(.95)
+        filter: brightness(.6)
+        //transform: scaleX(.95)
 
     .current,.adjacent
         transition: .2s ease-in-out
 
     .current
         z-index: 3
-        transform: scaleX(1.3) scaleY(1.2)
+        transform: scale(1.1)
         cursor: pointer
         .container
             box-shadow: 3px 3px 12px 0 #0000005b
 
     .adjacent
         z-index: 2
-        transform: scaleY(1.1)
+        transform: scale(1.05)
         transition-delay: .1s
 
     #br,#bl
