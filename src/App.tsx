@@ -10,6 +10,7 @@ import IceCream from "components/Battles/IceCream/IceCream";
 import Sceptre from "components/Battles/Sceptre/Sceptre";
 import Carousel from "components/Carousel";
 import GQL from "components/GQL";
+import { CgComponents } from "react-icons/cg";
 
 function App() {
   const battles = [
@@ -26,6 +27,10 @@ function App() {
   return (
     <div className="App">
       <header>
+        <div className="icon">
+          <CgComponents size={40} />
+        </div>
+
         <h1>
           Some cool <b>components</b>
         </h1>
