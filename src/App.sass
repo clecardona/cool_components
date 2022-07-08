@@ -84,9 +84,14 @@ main
         .query
             position: absolute
             font-family: "Lucida Console", "Courier New", monospace
+            cursor: grabbing
+            z-index: 100
+
+            display: flex
+            justify-content: center
 
             top: 3em
-            right: 4em
+            right: 3em
             border-radius: 12px
             padding: .3em
 
@@ -97,6 +102,11 @@ main
 
             white-space: pre-wrap
             box-shadow: 3px 3px 12px #000000e3
+
+            transition: .3s
+            &:hover
+                transition: width .3s
+                width: 300px
 
         .selectors
             display: grid
