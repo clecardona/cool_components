@@ -1,13 +1,23 @@
-import { useEffect, useState } from "react";
-import Books from "./Books";
-const axios = require("axios");
+import {
+  useEffect,
+  useState,
+} from 'react';
+
+import {
+  Checkbox,
+  FormControlLabel,
+} from '@mui/material';
+
+import Books from './Books';
+
+const axios = require("axios")
 
 const GQL = () => {
-  const [data, setData] = useState([]);
-  const [loaded, setLoaded] = useState(false);
-  const [id, setId] = useState(false);
-  const [author, setAuthor] = useState(true);
-  const API_URL = "https://clecardona-ql.herokuapp.com/graphql";
+  const [data, setData] = useState([])
+  const [loaded, setLoaded] = useState(false)
+  const [id, setId] = useState(false)
+  const [author, setAuthor] = useState(true)
+  const API_URL = "https://clecardona-ql.herokuapp.com/graphql"
   const queryQL = `
   query Books {
     books {
@@ -16,7 +26,7 @@ const GQL = () => {
         ${author ? "author" : ""}
       }
     }
-  `;
+  `
 
   async function fetchData() {
     const response = await axios({
@@ -28,43 +38,51 @@ const GQL = () => {
       data: {
         query: queryQL,
       },
-    });
-    setData(response.data.data);
-    setLoaded(true);
+    })
+    setData(response.data.data)
+    setLoaded(true)
   }
 
   useEffect(() => {
-    fetchData();
-  }, [id, author]);
-
-  console.log("queryQL", queryQL);
+    fetchData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id, author])
 
   return (
     <>
-      <span className="query">{queryQL}</span>
+      <span className='query'>{queryQL}</span>
 
-      <div className="selectors">
-        <label>
-          <input type="checkbox" checked={id} onChange={() => setId(!id)} />
-          Show id
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            checked={author}
-            onChange={() => setAuthor(!author)}
-          />
-          Show author(s)
-        </label>
+      <div className='selectors'>
+        <FormControlLabel
+          label='Show ID'
+          color='secondary'
+          control={
+            <Checkbox
+              checked={id}
+              onChange={() => setId(!id)}
+              sx={{ color: "white" }}
+            />
+          }
+        />
+        <FormControlLabel
+          label='Show author(s)'
+          control={
+            <Checkbox
+              checked={author}
+              onChange={() => setAuthor(!author)}
+              sx={{ color: "white" }}
+            />
+          }
+        />
       </div>
 
-      <section className="list">
+      <section className='list'>
         {!loaded && <p>Loading...</p>}
         {/* @ts-ignore */}
-        {loaded && <Books books={data.books} />}
+        {loaded && <Books books={data?.books} />}
       </section>
     </>
-  );
-};
+  )
+}
 
-export default GQL;
+export default GQL

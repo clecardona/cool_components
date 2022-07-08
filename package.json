@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.5.10",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/material": "^5.8.7",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -24,7 +27,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "deploy website": "react-scripts build && firebase deploy"
+    "deploy website": "react-scripts build && firebase deploy",
+    "cardo-ui": "npm link cardo-ui"
   },
   "eslintConfig": {
     "extends": [
